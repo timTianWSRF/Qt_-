@@ -1,122 +1,16 @@
-# Qt_calculator
-**介绍：使用Qt5做的仿计算器APP**  
-### ⚪项目结构
-![alt 项目结构](./2.PNG "项目结构")
-- - -
-### ⚪界面展示
-![alt 界面展示](./1.PNG "界面展示")
-- - -
-### ⚪项目思路
-使用了布局管理器（*QGridLayout*）一行4个空，一共5行。用了三个*label*和12个*button* ，C键是*clear*的意思，直接作*清空*操作。 
+//
+// Created by TIM on 2021/1/28 0028.
+//
 
-这个计算器是不含括号的但是有优先级的，基本原理就是先转为逆波兰表达式，再计算结果。  
-- - -
-### ⚪相关代码注释
-该项目的类名也叫*second*，*second*类定义如下所示：
-```C++
-class second : public QWidget {
-Q_OBJECT
+// You may need to build the project (run Qt uic code generator) to get "ui_second.h" resolved
 
-public:
-    QString h="";//h用于存放当前的式子
-    explicit second(QWidget *parent = nullptr);
+#include "second.h"
+#include "ui_second.h"
+#include <cmath>
+#include <QGridLayout>
+#include <queue>
+#include <stack>
 
-    ~second() override;
-
-private:
-    Ui::second *ui;
-    //定义各个部件
-    QLabel *text_content, *answer, *question;
-    QPushButton *cal,*one,*two,*three,*four,*five,*six,*seven,*eight,*nine,*zero,*clear,*plus,*minus,*cheng,*chu;
-
-
-private slots:
-    //计算的核心函数，具体定义在second.cpp中
-    void CAL();
-    //为了方便，就不在second.cpp中定义了，但这是不规范的。
-    //用于定义每个按钮的行为，对应哪个按钮从函数名就可以看出。
-    void One()
-    {
-        h+='1';
-        question->setText(h);
-    };
-    void Two()
-    {
-        h+='2';
-        question->setText(h);
-    };
-    void Three()
-    {
-        h+='3';
-        question->setText(h);
-    };
-    void Four()
-    {
-        h+='4';
-        question->setText(h);
-    };
-    void Five()
-    {
-        h+='5';
-        question->setText(h);
-    };
-    void Six()
-    {
-        h+='6';
-        question->setText(h);
-    };
-    void Seven()
-    {
-        h+='7';
-        question->setText(h);
-    };
-    void Eight()
-    {
-        h+='8';
-        question->setText(h);
-    };
-    void Nine()
-    {
-        h+='9';
-        question->setText(h);
-    };
-    void Zero()
-    {
-        h+='0';
-        question->setText(h);
-    };
-    void Plus()
-    {
-        h+='+';
-        question->setText(h);
-    };
-    void Minus()
-    {
-        h+='-';
-        question->setText(h);
-    };
-    void Cheng()
-    {
-        h+='*';
-        question->setText(h);
-    };
-    void Chu()
-    {
-        h+='/';
-        question->setText(h);
-    };
-    void Clear()
-    {
-        h="";
-        question->setText(h);
-    };
-
-};
-```
-这里的栈（*stack*）没有使用STL给的模板，直接用指针手撕。
-```C++
-//手撕单链表用于表示栈stack，没有用STL。
-//定义结点
 struct node
 {
     double data;
@@ -127,18 +21,17 @@ public:
 
 node::node() {}
 
-//定义栈
 class stack
 {
 private:
     node* top;
 public:
-    stack() { top = NULL; }//初始化，构造函数
+    stack() { top = NULL; }
     ~stack();
-    void push(double e);//入栈操作
-    double pop();//退栈操作
-    double getTop();//取顶部操作
-    bool isEmpty() { if (top == NULL) return true; else return false; }//判空操作
+    void push(double e);
+    double pop();
+    double getTop();
+    bool isEmpty() { if (top == NULL) return true; else return false; }
 };
 
 double stack::getTop()
@@ -258,7 +151,6 @@ sqqueue output;
 stack s;
 stack a;
 
-//计算出具体的逆波兰表达式
 void change(std::string str)
 {
     double num;
@@ -301,12 +193,11 @@ void change(std::string str)
     }
 }
 
-//计算逆波兰表达式的结果
 void second::CAL()
 {
     QString valueStr;
-    QString tempStr=question->text();//获取信号
-    std::string str=tempStr.toStdString();//将Qt的Qstring转化为string（C++标准的）
+    QString tempStr=question->text();
+    std::string str=tempStr.toStdString();
     change(str);
     double temp;
     double r, l;
@@ -350,7 +241,101 @@ void second::CAL()
         }
     }
     double ans=a.pop();
-    answer->setText(valueStr.setNum(ans));//传给槽
+    answer->setText(valueStr.setNum(ans));
 }
 
-```
+bool sqqueue::isEmpty()
+{
+    if (rear == front) return true;
+    else return false;
+}
+
+second::second(QWidget *parent) :
+        QWidget(parent), ui(new Ui::second) {
+    ui->setupUi(this);
+    h="";
+    text_content = new QLabel(this);
+    text_content->setText(tr("请输入式子："));
+    question = new QLabel(this);
+    answer = new QLabel(this);
+    cal = new QPushButton(this);
+    cal->setText(tr("="));
+    one = new QPushButton(this);
+    one->setText(tr("1"));
+    two = new QPushButton(this);
+    two->setText(tr("2"));
+    three = new QPushButton(this);
+    three->setText(tr("3"));
+    four = new QPushButton(this);
+    four->setText(tr("4"));
+    five = new QPushButton(this);
+    five->setText(tr("5"));
+    six = new QPushButton(this);
+    six->setText(tr("6"));
+    seven = new QPushButton(this);
+    seven->setText(tr("7"));
+    eight = new QPushButton(this);
+    eight->setText(tr("8"));
+    nine = new QPushButton(this);
+    nine->setText(tr("9"));
+    zero = new QPushButton(this);
+    zero->setText(tr("0"));
+    plus = new QPushButton(this);
+    plus->setText(tr("+"));
+    minus = new QPushButton(this);
+    minus->setText(tr("-"));
+    cheng = new QPushButton(this);
+    cheng->setText(tr("*"));
+    chu = new QPushButton(this);
+    chu->setText(tr("/"));
+    clear = new QPushButton(this);
+    clear->setText(tr("C"));
+
+    QGridLayout* mainLayout = new QGridLayout(this);
+    mainLayout->addWidget(text_content, 0, 0);
+    mainLayout->addWidget(question, 0, 1);
+    mainLayout->addWidget(answer, 0, 2);
+
+    mainLayout->addWidget(one, 1, 0);
+    mainLayout->addWidget(two, 1, 1);
+    mainLayout->addWidget(three, 1, 2);
+    mainLayout->addWidget(four, 1, 3);
+
+    mainLayout->addWidget(five, 2, 0);
+    mainLayout->addWidget(six, 2, 1);
+    mainLayout->addWidget(seven, 2, 2);
+    mainLayout->addWidget(eight, 2, 3);
+
+    mainLayout->addWidget(nine, 3, 0);
+    mainLayout->addWidget(zero, 3, 1);
+    mainLayout->addWidget(plus, 3, 2);
+    mainLayout->addWidget(minus, 3, 3);
+
+    mainLayout->addWidget(cheng, 4, 0);
+    mainLayout->addWidget(chu, 4, 1);
+    mainLayout->addWidget(cal, 4, 2);
+    mainLayout->addWidget(clear, 4, 3);
+
+
+    connect(cal,SIGNAL(clicked()),this,SLOT(CAL()));
+    connect(one,SIGNAL(clicked()),this,SLOT(One()));
+    connect(two,SIGNAL(clicked()),this,SLOT(Two()));
+    connect(three,SIGNAL(clicked()),this,SLOT(Three()));
+    connect(four,SIGNAL(clicked()),this,SLOT(Four()));
+    connect(five,SIGNAL(clicked()),this,SLOT(Five()));
+    connect(six,SIGNAL(clicked()),this,SLOT(Six()));
+    connect(seven,SIGNAL(clicked()),this,SLOT(Seven()));
+    connect(eight,SIGNAL(clicked()),this,SLOT(Eight()));
+    connect(nine,SIGNAL(clicked()),this,SLOT(Nine()));
+    connect(zero,SIGNAL(clicked()),this,SLOT(Zero()));
+    connect(chu,SIGNAL(clicked()),this,SLOT(Chu()));
+    connect(cheng,SIGNAL(clicked()),this,SLOT(Cheng()));
+    connect(plus,SIGNAL(clicked()),this,SLOT(Plus()));
+    connect(minus,SIGNAL(clicked()),this,SLOT(Minus()));
+    connect(clear,SIGNAL(clicked()),this,SLOT(Clear()));
+}
+
+second::~second() {
+    delete ui;
+}
+

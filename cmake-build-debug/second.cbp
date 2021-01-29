@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="second"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="D:/QTtry/second/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Cpp/bin/mingw32-make.exe -f &quot;D:/QTtry/second/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/Cpp/bin/mingw32-make.exe -f &quot;D:/QTtry/second/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Cpp/bin/mingw32-make.exe -f &quot;D:/QTtry/second/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Cpp/bin/mingw32-make.exe -f &quot;D:/QTtry/second/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="D:/QTtry/second/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Cpp/bin/mingw32-make.exe -f &quot;D:/QTtry/second/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/Cpp/bin/mingw32-make.exe -f &quot;D:/QTtry/second/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Cpp/bin/mingw32-make.exe -f &quot;D:/QTtry/second/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Cpp/bin/mingw32-make.exe -f &quot;D:/QTtry/second/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="second">
+				<Option output="D:/QTtry/second/cmake-build-debug/second.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/QTtry/second/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/QTtry/second/."/>
+					<Add directory="D:/Cpp/include"/>
+					<Add directory="d:\cpp\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="d:\cpp\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/x86_64-w64-mingw32"/>
+					<Add directory="d:\cpp\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="d:\cpp\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/include"/>
+					<Add directory="d:\cpp\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="d:\cpp\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Cpp/bin/mingw32-make.exe -f &quot;D:/QTtry/second/cmake-build-debug/Makefile&quot;  VERBOSE=1 second"/>
+					<CompileFile command="D:/Cpp/bin/mingw32-make.exe -f &quot;D:/QTtry/second/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Cpp/bin/mingw32-make.exe -f &quot;D:/QTtry/second/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Cpp/bin/mingw32-make.exe -f &quot;D:/QTtry/second/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="second/fast">
+				<Option output="D:/QTtry/second/cmake-build-debug/second.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/QTtry/second/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/QTtry/second/."/>
+					<Add directory="D:/Cpp/include"/>
+					<Add directory="d:\cpp\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="d:\cpp\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/x86_64-w64-mingw32"/>
+					<Add directory="d:\cpp\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="d:\cpp\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/include"/>
+					<Add directory="d:\cpp\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="d:\cpp\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Cpp/bin/mingw32-make.exe -f &quot;D:/QTtry/second/cmake-build-debug/Makefile&quot;  VERBOSE=1 second/fast"/>
+					<CompileFile command="D:/Cpp/bin/mingw32-make.exe -f &quot;D:/QTtry/second/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Cpp/bin/mingw32-make.exe -f &quot;D:/QTtry/second/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Cpp/bin/mingw32-make.exe -f &quot;D:/QTtry/second/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="D:/QTtry/second/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Cpp/bin/mingw32-make.exe -f &quot;D:/QTtry/second/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/Cpp/bin/mingw32-make.exe -f &quot;D:/QTtry/second/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Cpp/bin/mingw32-make.exe -f &quot;D:/QTtry/second/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Cpp/bin/mingw32-make.exe -f &quot;D:/QTtry/second/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="D:/QTtry/second/main.cpp">
+			<Option target="second"/>
+		</Unit>
+		<Unit filename="D:/QTtry/second/second.cpp">
+			<Option target="second"/>
+		</Unit>
+		<Unit filename="D:/QTtry/second/second.h">
+			<Option target="second"/>
+		</Unit>
+		<Unit filename="D:/QTtry/second/second.pro">
+			<Option target="second"/>
+		</Unit>
+		<Unit filename="D:/QTtry/second/second.pro.user">
+			<Option target="second"/>
+		</Unit>
+		<Unit filename="D:/QTtry/second/second.ui">
+			<Option target="second"/>
+		</Unit>
+		<Unit filename="D:/QTtry/second/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

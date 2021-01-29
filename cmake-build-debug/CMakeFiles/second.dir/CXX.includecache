@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/QTtry/second/main.cpp
+second.h
+D:/QTtry/second/second.h
+QApplication
+-
+
+D:/QTtry/second/second.cpp
+second.h
+D:/QTtry/second/second.h
+ui_second.h
+D:/QTtry/second/ui_second.h
+cmath
+-
+QGridLayout
+-
+queue
+-
+stack
+-
+
+D:/QTtry/second/second.h
+QWidget
+-
+QLabel
+-
+QLineEdit
+-
+QPushButton
+-
+string
+-
+cstring
+-
+stack
+-
+
